@@ -87,7 +87,7 @@ if ($dcInfo.dnsHostName -eq $null)
 if ($goodToGo)
 {
     # Get the new computer name
-    $newName = Invoke-RestMethod -Method GET -Uri "https://generatename.azurewebsites.net/api/HttpTrigger1?prefix=AD-"
+    $newName = "COMPANY-$((gwmi win32_bios).serialnumber)"
 
     # Set the computer name
     Write-Host "Renaming computer to $($newName.name)"
